@@ -2,7 +2,8 @@ import java.util.Arrays;
 import java.util.Scanner;
 
 /**
- * Created by nolan on 1/19/16.
+ * Created by Nolan Barth on 1/19/16.
+ * Rob Hitchens
  */
 public class UserInterface {
 
