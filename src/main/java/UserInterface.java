@@ -19,10 +19,15 @@ public class UserInterface {
         System.out.println("Would you like your array sorted? Yes/No");
         String YN = user_input.next();
         if ( YN.equalsIgnoreCase("yes") || YN.equalsIgnoreCase("y") ) sort = true;
-        System.out.println("Please input each starting character (separated only by commas) for the words you'd like to generate in your preferred order:");
+        System.out.println("Please input the initial letters for the words you'd like to generate in your preferred order:");
         String input = user_input.next();
         System.out.println("input: "+input);
-        arrIn = input.split(",");
+        StringBuffer r = new StringBuffer();
+        for (int k = 0; k < input.length(); k++) {
+            if(Character.isLetter(input.charAt(k)))
+                r.append(input.charAt(k) + ",");
+        }
+        arrIn = r.toString().split(",");
         System.out.println(Arrays.toString(arrIn));
         ArrayGenerator ag = new ArrayGenerator(arrIn, size, sort);
         ag.generate();
